@@ -10,10 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/VitaliyDvil/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "damnvile",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/VitaliyDvil/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/VitaliyDvil/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/VitaliyDvil/frontend-project-lvl1#readme",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
 }

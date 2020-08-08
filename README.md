@@ -1,9 +1,4 @@
-
-![Node CI](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/VitaliyDvil/frontend-project-lvl1/actions)
-
-![Node CI](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/Node%20CI/badge.svg)
-
-![example workflow file path](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/.github/workflows/node.js.yml/badge.svg)
+[![Node CI](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/VitaliyDvil/frontend-project-lvl1/actions)
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability"/>

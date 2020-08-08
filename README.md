@@ -1,5 +1,5 @@
 
-[![Node CI](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/VitaliyDvil/frontend-project-lvl1/actions)
+![Node CI](https://github.com/VitaliyDvil/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/VitaliyDvil/frontend-project-lvl1/actions)
 
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability">

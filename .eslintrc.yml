@@ -9,7 +9,7 @@ env:
   node: true
 
 extends:
-  - 'eslint-config-airbnb'
+  - 'airbnb-base'
   # - 'plugin:jest/recommended'
 
 rules:

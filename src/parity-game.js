@@ -34,7 +34,6 @@ function parityGame() {
 
     const userAnswer = readlineSync.question('Your answer:');
     const rightAnswer = getRigthAnswer(randomNumber);
-
     if (isCorrectAnswer(randomNumber, userAnswer)) {
       console.log('Correct!');
     } else {

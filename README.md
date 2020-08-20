@@ -4,9 +4,11 @@
     <img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability"/>
 </a>
 
-<a href="https://asciinema.org/a/BU2oGzOzAFfsqsidjjA8rLJ5X"></a>
+<a href="https://asciinema.org/a/BU2oGzOzAFfsqsidjjA8rLJ5X"></a> <!-- asciinema parity-game -->
 
-<a href="https://asciinema.org/a/WZsK1vrTTC4Y21c5w0q4NduBz"></a>
+<a href="https://asciinema.org/a/WZsK1vrTTC4Y21c5w0q4NduBz"></a> <!-- asciinema calc-game -->
+
+ <a hraf="https://asciinema.org/a/ZpT5P2CDi7L3L7EWscLVRGnGF"></a> <!-- asciinema gcd-game -->
 
 
   

@@ -10,5 +10,8 @@
 
  <a hraf="https://asciinema.org/a/ZpT5P2CDi7L3L7EWscLVRGnGF"></a> <!-- asciinema gcd-game -->
 
+ <a hraf="https://asciinema.org/a/SxKEnRf5DN3eSTk7t3oQXG0Pg"></a> <!-- asciinema progression-game -->
+
+
 
   

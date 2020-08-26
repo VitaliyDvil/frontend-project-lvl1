@@ -4,17 +4,18 @@
     <img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability"/>
 </a>
 
-<a href="https://asciinema.org/a/BU2oGzOzAFfsqsidjjA8rLJ5X"></a> <!-- asciinema parity-game -->
+# Asciinema links:
 
-<a href="https://asciinema.org/a/WZsK1vrTTC4Y21c5w0q4NduBz"></a> <!-- asciinema calc-game -->
+[parity-game](https://asciinema.org/a/BU2oGzOzAFfsqsidjjA8rLJ5X) <!-- asciinema parity-game -->
 
- <a hraf="https://asciinema.org/a/ZpT5P2CDi7L3L7EWscLVRGnGF"></a> <!-- asciinema gcd-game -->
+[calc-game](https://asciinema.org/a/WZsK1vrTTC4Y21c5w0q4NduBz) <!-- asciinema calc-game -->
 
- <a hraf="https://asciinema.org/a/SxKEnRf5DN3eSTk7t3oQXG0Pg"></a> <!-- asciinema progression-game -->
+[gcd-game](https://asciinema.org/a/ZpT5P2CDi7L3L7EWscLVRGnGF) <!-- asciinema gcd-game -->
 
- <a harf ="https://asciinema.org/a/gWMf3qUW1SPlDX8voIDiLgyFt"></a>  <!-- asciinema prime-game -->
+[progression-game](https://asciinema.org/a/SxKEnRf5DN3eSTk7t3oQXG0Pg) <!-- asciinema progression-game -->
 
- (https://asciinema.org/a/gWMf3qUW1SPlDX8voIDiLgyFt) <!-- asciinema prime-game -->
+[prime-game](https://asciinema.org/a/gWMf3qUW1SPlDX8voIDiLgyFt) <!-- asciinema prime-game -->
+
 
 
 

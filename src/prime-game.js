@@ -35,7 +35,7 @@ function primeGame() {
   const userName = readlineSync.question('May I have your name?');
   console.log(`Hello, ${userName}!`);
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  console.log('Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.');
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
     const randomNumber = randomInteger(0, 100);

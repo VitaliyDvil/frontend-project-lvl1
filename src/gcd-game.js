@@ -16,6 +16,11 @@ function isCorrectAnswer(question, answer) {
   return false;
 }
 
+function randomInteger(min, max) {
+  const rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
 function gcdGame() {
   console.log('Welcome to the brain games!');
   const userName = readlineSync.question('May I have your name?');
@@ -24,8 +29,8 @@ function gcdGame() {
   console.log('Find the greatest common divisor of given numbers.');
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const firstRandomNum = Math.floor(Math.random() * 100);
-    const secondRandomNum = Math.floor(Math.random() * 100);
+    const firstRandomNum = randomInteger(0, 100);
+    const secondRandomNum = randomInteger(0, 100);
 
     console.log(`Question: ${firstRandomNum} ${secondRandomNum}`);
 

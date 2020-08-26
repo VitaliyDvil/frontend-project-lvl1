@@ -3,14 +3,12 @@ import readlineSync from 'readline-sync';
 const numOfRigthAnswers = 3;
 const progressionLength = 10;
 
-function getProgression() {
+function getProgression(progressionStep, firstElement) {
   const progression = [];
-  const step = Math.ceil(Math.random() * progressionLength);
-  const firstProgressionNumber = Math.ceil(Math.random() * progressionLength);
-  progression.push(firstProgressionNumber);
+  progression.push(firstElement);
 
   for (let i = 1; progressionLength > i; i += 1) {
-    progression.push(firstProgressionNumber + (step * i));
+    progression.push(firstElement + (progressionStep * i));
   }
   return progression;
 }
@@ -20,11 +18,10 @@ function randomInteger(min, max) {
   return Math.round(rand);
 }
 
-function progressionToQuestion(progression) {
-  const position = randomInteger(0, progression.length - 1);
-  const answer = progression[position];
+function progressionToQuestion(progression, changingPosition) {
+  const answer = progression[changingPosition];
   const progressionCopy = [...progression];
-  progressionCopy[position] = '..';
+  progressionCopy[changingPosition] = '..';
   const question = progressionCopy.join(' ');
 
   return { question, answer };
@@ -45,8 +42,11 @@ function progressionGame() {
   console.log('What number is missing in the progression?');
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const progression = getProgression();
-    const { question, answer } = progressionToQuestion(progression);
+    const step = Math.ceil(Math.random() * progressionLength);
+    const firstProgressionNumber = Math.ceil(Math.random() * progressionLength);
+    const progression = getProgression(step, firstProgressionNumber);
+    const position = randomInteger(0, progression.length - 1);
+    const { question, answer } = progressionToQuestion(progression, position);
 
     console.log(`Question: ${question}`);
 

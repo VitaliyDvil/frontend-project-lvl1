@@ -20,6 +20,11 @@ function getRigthAnswer(question) {
   return isEven(question) ? 'yes' : 'no';
 }
 
+function randomInteger(min, max) {
+  const rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
+
 function parityGame() {
   console.log('Welcome to the brain games!');
   const userName = readlineSync.question('May I have your name?');
@@ -28,7 +33,7 @@ function parityGame() {
   console.log('Answer \x1b[31m"yes"\x1b[0m if the number is even, otherwise answer \x1b[31m"no"\x1b[0m.');
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const randomNumber = Math.floor(Math.random() * 100);
+    const randomNumber = randomInteger(0, 100);
 
     console.log(`Question: ${randomNumber}`);
 

@@ -14,6 +14,8 @@
 
  <a harf ="https://asciinema.org/a/gWMf3qUW1SPlDX8voIDiLgyFt"></a>  <!-- asciinema prime-game -->
 
+ (https://asciinema.org/a/gWMf3qUW1SPlDX8voIDiLgyFt) <!-- asciinema prime-game -->
+
 
 
   

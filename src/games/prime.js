@@ -1,6 +1,4 @@
-import readlineSync from 'readline-sync';
-
-const numOfRigthAnswers = 3;
+import engine from '../index.js';
 
 function isPrime(num) {
   if (num < 2) {
@@ -24,35 +22,32 @@ function getRigthAnswer(num) {
 }
 
 function isCorrectAnswer(question, answer) {
-  if (question === answer) {
+  if (isPrime(question) && answer === 'yes') {
+    return true;
+  }
+  if (!isPrime(question) && answer === 'no') {
     return true;
   }
   return false;
 }
 
-function primeGame() {
-  console.log('Welcome to the brain games!');
-  const userName = readlineSync.question('May I have your name?');
-  console.log(`Hello, ${userName}!`);
-
-  console.log('Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.');
-
-  for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const randomNumber = randomInteger(0, 100);
-
-    console.log(`Question: ${randomNumber}`);
-
-    const userAnswer = readlineSync.question('Your answer:');
-    const rightAnswer = getRigthAnswer(randomNumber);
-    if (isCorrectAnswer(rightAnswer, userAnswer)) {
-      console.log('Correct!');
-    } else {
-      console.log(`\x1b[31m"${userAnswer}"\x1b[0m is wrong answer ;(. Correct answer was \x1b[31m"${rightAnswer}"\x1b[0m.`);
-      console.log(`Let's try again, ${userName}`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+function getGameDescription() {
+  return 'Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.';
 }
 
-export default primeGame;
+function generateQuestion() {
+  const randomNumber = randomInteger(0, 100);
+  return randomNumber;
+}
+
+function getAnswerToShow(question) {
+  return getRigthAnswer(question);
+}
+
+function getQuestionToShow(question) {
+  return question;
+}
+
+export default function runPrimeGame() {
+  engine(getGameDescription, generateQuestion, isCorrectAnswer, getAnswerToShow, getQuestionToShow);
+}

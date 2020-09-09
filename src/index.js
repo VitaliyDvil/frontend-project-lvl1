@@ -1,24 +1,39 @@
-import calcGame from './games/calc.js';
-import gcdGame from './games/gcd.js';
-import parityGame from './games/parity.js';
-import primeGame from './games/prime.js';
-import progressionGame from './games/progression.js';
+import readlineSync from 'readline-sync';
 
-export default function runGame(name) {
-  if (name === 'calc') {
-    return calcGame();
+const numOfRigthAnswers = 3;
+
+function engine(
+  getGameDescription,
+  generateQuestion,
+  isCorrectAnswer,
+  getAnswerToShow,
+  getQuestionToShow,
+) {
+  console.log('Welcome to the brain games!');
+  const userName = readlineSync.question('May I have your name?');
+  console.log(`Hello, ${userName}!`);
+
+  const gameDescription = getGameDescription();
+  console.log(gameDescription);
+
+  for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
+    const question = generateQuestion();
+    const questionToShow = getQuestionToShow(question);
+    console.log(`Question: ${questionToShow}`);
+
+    const userAnswer = readlineSync.question('Your answer:');
+
+    if (isCorrectAnswer(question, userAnswer)) {
+      console.log('Correct!');
+    } else {
+      const rightAnswer = getAnswerToShow(question);
+      console.log(`\x1b[31m"${userAnswer}"\x1b[0m is wrong answer ;(. Correct answer was \x1b[31m"${rightAnswer}"\x1b[0m.`);
+      console.log(`Let's try again, ${userName}`);
+      return;
+    }
   }
-  if (name === 'gcd') {
-    return gcdGame();
-  }
-  if (name === 'parity') {
-    return parityGame();
-  }
-  if (name === 'prime') {
-    return primeGame();
-  }
-  if (name === 'progression') {
-    return progressionGame();
-  }
-  return undefined;
+
+  console.log(`Congratulations, ${userName}!`);
 }
+
+export default engine;

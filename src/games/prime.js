@@ -1,4 +1,5 @@
 import engine from '../index.js';
+import randomInteger from '../random-integer.js';
 
 function isPrime(num) {
   if (num < 2) {
@@ -12,42 +13,29 @@ function isPrime(num) {
   return true;
 }
 
-function randomInteger(min, max) {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
-}
-
 function getRigthAnswer(num) {
   return isPrime(num) ? 'yes' : 'no';
 }
 
-function isCorrectAnswer(question, answer) {
-  if (isPrime(question) && answer === 'yes') {
-    return true;
-  }
-  if (!isPrime(question) && answer === 'no') {
-    return true;
-  }
-  return false;
-}
-
-function getGameDescription() {
-  return 'Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.';
-}
+const gameDescription = 'Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.';
 
 function generateQuestion() {
   const randomNumber = randomInteger(0, 100);
-  return randomNumber;
+  const rightAnswer = getRigthAnswer(randomNumber);
+  return {
+    randomNumber,
+    rightAnswer,
+  };
 }
 
 function getAnswerToShow(question) {
-  return getRigthAnswer(question);
+  return question.rightAnswer;
 }
 
 function getQuestionToShow(question) {
-  return question;
+  return question.randomNumber;
 }
 
 export default function runPrimeGame() {
-  engine(getGameDescription, generateQuestion, isCorrectAnswer, getAnswerToShow, getQuestionToShow);
+  engine(gameDescription, generateQuestion, getAnswerToShow, getQuestionToShow);
 }

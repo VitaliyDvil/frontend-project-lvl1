@@ -1,4 +1,5 @@
 import engine from '../index.js';
+import randomInteger from '../random-integer.js';
 
 function getRigthAnswer(num1, num2, operator) {
   if (operator === '-') {
@@ -10,26 +11,21 @@ function getRigthAnswer(num1, num2, operator) {
   return num1 * num2;
 }
 
-function randomInteger(min, max) {
-  const rand = min - 0.5 + Math.random() * (max - min + 1);
-  return Math.round(rand);
-}
-
-function getGameDescription() {
-  return 'What is the result of the expression?';
-}
+const gameDescription = 'What is the result of the expression?';
 
 function generateQuestion() {
   const firstRandomNum = randomInteger(0, 100);
   const secondRandomNum = randomInteger(0, 100);
-  const operatorsList = ['-', '+', '*'];
-  const randomOperator = operatorsList[Math.floor(Math.random() * operatorsList.length)];
+  const operators = ['-', '+', '*'];
+  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
   const expression = `${firstRandomNum} ${randomOperator} ${secondRandomNum}`;
+  const rightAnswer = getRigthAnswer(firstRandomNum, secondRandomNum, randomOperator);
   return {
     firstRandomNum,
     secondRandomNum,
     randomOperator,
     expression,
+    rightAnswer,
   };
 }
 
@@ -38,16 +34,9 @@ function getQuestionToShow(question) {
 }
 
 function getAnswerToShow(question) {
-  return getRigthAnswer(question.firstRandomNum, question.secondRandomNum, question.randomOperator);
-}
-
-function isCorrectAnswer(question, answer) {
-  if (Number(getAnswerToShow(question)) === Number(answer)) {
-    return true;
-  }
-  return false;
+  return question.rightAnswer;
 }
 
 export default function runCalcGame() {
-  engine(getGameDescription, generateQuestion, isCorrectAnswer, getAnswerToShow, getQuestionToShow);
+  engine(gameDescription, generateQuestion, getAnswerToShow, getQuestionToShow);
 }

@@ -17,25 +17,18 @@ function getRigthAnswer(num) {
   return isPrime(num) ? 'yes' : 'no';
 }
 
-const gameDescription = 'Answer \x1b[31m"yes"\x1b[0m if given number is prime. Otherwise answer \x1b[31m"no"\x1b[0m.';
+const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function generateQuestion() {
+function generateQuestionAndAnswer() {
   const randomNumber = randomInteger(0, 100);
   const rightAnswer = getRigthAnswer(randomNumber);
+  const question = randomNumber;
   return {
-    randomNumber,
+    question,
     rightAnswer,
   };
 }
 
-function getAnswerToShow(question) {
-  return question.rightAnswer;
-}
-
-function getQuestionToShow(question) {
-  return question.randomNumber;
-}
-
 export default function runPrimeGame() {
-  engine(gameDescription, generateQuestion, getAnswerToShow, getQuestionToShow);
+  engine(gameDescription, generateQuestionAndAnswer);
 }

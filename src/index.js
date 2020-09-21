@@ -8,9 +8,7 @@ function isCorrectAnswer(question, answer) {
 
 function engine(
   gameDescription,
-  generateQuestion,
-  getAnswerToShow,
-  getQuestionToShow,
+  generateQuestionAndAnswer,
 ) {
   console.log('Welcome to the brain games!');
   const userName = readlineSync.question('May I have your name?');
@@ -19,17 +17,16 @@ function engine(
   console.log(gameDescription);
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const question = generateQuestion();
-    const questionToShow = getQuestionToShow(question);
-    const rightAnswer = getAnswerToShow(question);
-    console.log(`Question: ${questionToShow}`);
+    const questionAndAnswer = generateQuestionAndAnswer();
+    const { question, rightAnswer } = questionAndAnswer;
+    console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer:');
 
     if (isCorrectAnswer(rightAnswer, userAnswer)) {
       console.log('Correct!');
     } else {
-      console.log(`\x1b[31m"${userAnswer}"\x1b[0m is wrong answer ;(. Correct answer was \x1b[31m"${rightAnswer}"\x1b[0m.`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${rightAnswer}".`);
       console.log(`Let's try again, ${userName}`);
       return;
     }

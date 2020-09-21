@@ -9,25 +9,18 @@ function getRigthAnswer(question) {
   return isEven(question) ? 'yes' : 'no';
 }
 
-const gameDescription = 'Answer \x1b[31m"yes"\x1b[0m if the number is even, otherwise answer \x1b[31m"no"\x1b[0m.';
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-function generateQuestion() {
+function generateQuestionAndAnswer() {
   const randomNumber = randomInteger(0, 100);
-  const rightAnwer = getRigthAnswer(randomNumber);
+  const rightAnswer = getRigthAnswer(randomNumber);
+  const question = randomNumber;
   return {
-    randomNumber,
-    rightAnwer,
+    question,
+    rightAnswer,
   };
 }
 
-function getAnswerToShow(question) {
-  return question.rightAnwer;
-}
-
-function getQuestionToShow(question) {
-  return question.randomNumber;
-}
-
 export default function runParityGame() {
-  engine(gameDescription, generateQuestion, getAnswerToShow, getQuestionToShow);
+  engine(gameDescription, generateQuestionAndAnswer);
 }

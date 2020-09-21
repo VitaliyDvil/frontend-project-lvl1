@@ -14,31 +14,23 @@ function getProgression(progressionStep, firstElement) {
 
 const gameDescription = 'What number is missing in the progression?';
 
-function generateQuestion() {
-  const step = Math.ceil(Math.random() * progressionLength);
-  const firstProgressionNumber = Math.ceil(Math.random() * progressionLength);
+function generateQuestionAndAnswer() {
+  const step = randomInteger(1, progressionLength);
+  const firstProgressionNumber = randomInteger(1, progressionLength);
   const progression = getProgression(step, firstProgressionNumber);
   const hiddenNumberPosition = randomInteger(0, progression.length - 1);
 
   const rightAnswer = progression[hiddenNumberPosition];
 
   progression[hiddenNumberPosition] = '..';
-  const term = progression.join(' ');
+  const question = progression.join(' ');
 
   return {
     rightAnswer,
-    term,
+    question,
   };
 }
 
-function getAnswerToShow(question) {
-  return question.rightAnswer;
-}
-
-function getQuestionToShow(question) {
-  return question.term;
-}
-
 export default function runProgressionGame() {
-  engine(gameDescription, generateQuestion, getAnswerToShow, getQuestionToShow);
+  engine(gameDescription, generateQuestionAndAnswer);
 }

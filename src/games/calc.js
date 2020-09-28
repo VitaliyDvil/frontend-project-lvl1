@@ -2,16 +2,16 @@ import engine from '../index.js';
 import randomInteger from '../random-integer.js';
 
 function getRigthAnswer(num1, num2, operator) {
-  if (operator === '-') {
-    return num1 - num2;
+  switch (operator) {
+    case '-':
+      return num1 - num2;
+    case '+':
+      return num1 + num2;
+    case '*':
+      return num1 * num2;
+    default:
+      return null;
   }
-  if (operator === '+') {
-    return num1 + num2;
-  }
-  if (operator === '*') {
-    return num1 * num2;
-  }
-  return undefined;
 }
 
 const gameDescription = 'What is the result of the expression?';

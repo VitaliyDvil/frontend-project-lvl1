@@ -4,7 +4,35 @@
     <img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability"/>
 </a>
 
-# Asciinema links:
+# Description:
+  The project "Frontend-project-lvl1" contains five easy games, launch commands you can find lower.
+  Have some fun).
+
+## Setup
+
+```sh
+$ make install
+```
+
+## Commands to launch games:
+
+```sh
+$ brain-calc
+```
+```sh
+$ brain-gcd
+```
+```sh
+$ brain-even
+```
+```sh
+$ brain-prime
+```
+```sh
+$ brain-progression
+```
+
+## Asciinema links:
 
 [parity-game](https://asciinema.org/a/BU2oGzOzAFfsqsidjjA8rLJ5X) <!-- asciinema parity-game -->
 

@@ -13,16 +13,11 @@ function isPrime(num) {
   return true;
 }
 
-function getRigthAnswer(num) {
-  return isPrime(num) ? 'yes' : 'no';
-}
-
 const gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function generateQuestionAndAnswer() {
-  const randomNumber = randomInteger(0, 100);
-  const rightAnswer = getRigthAnswer(randomNumber);
-  const question = randomNumber;
+  const question = randomInteger(0, 100);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
   return {
     question,
     rightAnswer,

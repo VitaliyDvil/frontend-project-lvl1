@@ -15,7 +15,7 @@ function generateQuestionAndAnswer() {
   const secondRandomNum = randomInteger(0, 100);
   const rightAnswer = getGcd(firstRandomNum, secondRandomNum);
   return {
-    question: [firstRandomNum, secondRandomNum],
+    question: `${firstRandomNum} ${secondRandomNum}`,
     rightAnswer,
   };
 }

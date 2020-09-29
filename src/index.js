@@ -2,8 +2,14 @@ import readlineSync from 'readline-sync';
 
 const numOfRigthAnswers = 3;
 
-function isCorrectAnswer(question, answer) {
-  return String(question) === answer;
+function isCorrectAnswer(correctAnswer, userAnswer) {
+  if (typeof correctAnswer === 'string') {
+    return correctAnswer === userAnswer;
+  }
+  if (typeof correctAnswer === 'number') {
+    return correctAnswer === Number(userAnswer);
+  }
+  return null;
 }
 
 function engine(
@@ -17,8 +23,7 @@ function engine(
   console.log(gameDescription);
 
   for (let numOfQuestion = 1; numOfQuestion <= numOfRigthAnswers; numOfQuestion += 1) {
-    const questionAndAnswer = generateQuestionAndAnswer();
-    const { question, rightAnswer } = questionAndAnswer;
+    const { question, rightAnswer } = generateQuestionAndAnswer();
     console.log(`Question: ${question}`);
 
     const userAnswer = readlineSync.question('Your answer:');

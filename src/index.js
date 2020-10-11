@@ -2,14 +2,11 @@ import readlineSync from 'readline-sync';
 
 const numOfRigthAnswers = 3;
 
-function isCorrectAnswer(correctAnswer, userAnswer) {
-  if (typeof correctAnswer === 'string') {
-    return correctAnswer === userAnswer;
+function isCorrectAnswer(rightAnswer, userAnswer) {
+  if (rightAnswer === userAnswer) {
+    return true;
   }
-  if (typeof correctAnswer === 'number') {
-    return correctAnswer === Number(userAnswer);
-  }
-  return null;
+  return false;
 }
 
 function engine(

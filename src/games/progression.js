@@ -20,7 +20,7 @@ function generateQuestionAndAnswer() {
   const progression = getProgression(step, firstProgressionNumber);
   const hiddenNumberPosition = randomInteger(0, progression.length - 1);
 
-  const rightAnswer = progression[hiddenNumberPosition];
+  const rightAnswer = String(progression[hiddenNumberPosition]);
 
   progression[hiddenNumberPosition] = '..';
   const question = progression.join(' ');

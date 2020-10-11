@@ -13,7 +13,7 @@ const gameDescription = 'Find the greatest common divisor of given numbers.';
 function generateQuestionAndAnswer() {
   const firstRandomNum = randomInteger(0, 100);
   const secondRandomNum = randomInteger(0, 100);
-  const rightAnswer = getGcd(firstRandomNum, secondRandomNum);
+  const rightAnswer = String(getGcd(firstRandomNum, secondRandomNum));
   return {
     question: `${firstRandomNum} ${secondRandomNum}`,
     rightAnswer,

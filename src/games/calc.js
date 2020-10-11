@@ -22,7 +22,7 @@ function generateQuestionAndAnswer() {
   const operators = ['-', '+', '*'];
   const randomOperator = operators[randomInteger(0, operators.length - 1)];
   const question = `${firstRandomNum} ${randomOperator} ${secondRandomNum}`;
-  const rightAnswer = getRigthAnswer(firstRandomNum, secondRandomNum, randomOperator);
+  const rightAnswer = String(getRigthAnswer(firstRandomNum, secondRandomNum, randomOperator));
   return {
     question,
     rightAnswer,
